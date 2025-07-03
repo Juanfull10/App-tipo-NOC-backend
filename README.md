@@ -1,6 +1,22 @@
 # 📡 Backend - NOC (Network Operations Center)
 
-Este proyecto es una aplicación backend desarrollada en **Node.js + TypeScript**, diseñada para realizar tareas automáticas de monitoreo de servicios. Utiliza una arquitectura basada en **Clean Architecture**, lo que permite un sistema escalable, mantenible y bien estructurado.
+🚀 ¿Qué hace esta app?
+Verifica servicios o endpoints automáticamente con tareas cron.
+
+Registra logs y resultados en consola o archivos.
+
+Sigue principios de separación de responsabilidades.
+
+Es base para integrarse con dashboards u otros sistemas.
+
+📦 Tecnologías
+Node.js
+
+TypeScript
+
+Clean Architecture
+
+Tareas programadas (cron jobs)
 
 ---
 
@@ -25,8 +41,13 @@ src/
 │   └── cron/                       # Tareas programadas (ej: chequeo de servicios)
 ├── logs/                          # Carpeta para almacenar logs del sistema
 └── tsconfig.json
+
 ```
+
+
+Terminal logs / Archivos de logs
 ![image](https://github.com/user-attachments/assets/f7442107-84c9-4a47-81ec-df04f3f3c8a1)
 ![image](https://github.com/user-attachments/assets/03251cdc-6baa-4ebd-8d29-0bc8fdf2fe7b)
+
 
 
