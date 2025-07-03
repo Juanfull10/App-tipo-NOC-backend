@@ -1,30 +1,30 @@
 # 📡 Backend - NOC (Network Operations Center)
 
-Este proyecto es una aplicación backend desarrollada en **Node.js + TypeScript**, diseñada para ejecutar tareas automáticas de monitoreo y verificación de servicios en una arquitectura inspirada en **Clean Architecture**. Puede ser usada como parte de un sistema completo de monitoreo (NOC Dashboard).
+Este proyecto es una aplicación backend desarrollada en **Node.js + TypeScript**, diseñada para realizar tareas automáticas de monitoreo de servicios. Utiliza una arquitectura basada en **Clean Architecture**, lo que permite un sistema escalable, mantenible y bien estructurado.
 
 ---
 
-## 📦 Tecnologías principales
+## 🧱 Arquitectura limpia implementada
 
-- Node.js
-- TypeScript
-- Clean Architecture
-- Cron (tareas programadas)
-- Terminal logs / consola
-- Modularización por capas (`domain`, `use-cases`, `presentation`, etc.)
+El proyecto sigue los principios de **Clean Architecture**, separando claramente cada responsabilidad:
 
----
-
-![image](https://github.com/user-attachments/assets/f7442107-84c9-4a47-81ec-df04f3f3c8a1)
 
 ## 🧱 Estructura del proyecto
 
 ```bash
 src/
-├── app.ts                     # Punto de entrada principal
+├── app.ts                          # Punto de entrada principal
 ├── domain/
-│   └── use-cases/             # Casos de uso (ej. check-service.ts)
+│   ├── entities/                   # Modelos de dominio (interfaces puras)
+│   ├── repository/                 # Contratos (interfaces) que definen qué debe hacer la capa de datos
+│   ├── use-cases/                  # Casos de uso: lógica de negocio
+│   └── datasources/               # Interfaces para fuentes de datos específicas
+├── infrastructure/                # Implementaciones de repositorios y fuentes de datos reales (ej: APIs, archivos)
 ├── presentation/
-│   ├── server.ts              # Inicio de servidor si aplica
-│   └── cron/                  # Tareas programadas (cron-services.ts)
+│   ├── server.ts                   # Arranque del servidor
+│   └── cron/                       # Tareas programadas (ej: chequeo de servicios)
+├── logs/                          # Carpeta para almacenar logs del sistema
+└── tsconfig.json
+```
+![image](https://github.com/user-attachments/assets/f7442107-84c9-4a47-81ec-df04f3f3c8a1)
 
