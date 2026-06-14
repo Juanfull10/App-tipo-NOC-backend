@@ -15,9 +15,9 @@ export class FileSystemDatasource implements LogDatasource{
     }
 
     private createLogsFiles=()=>{
+
         if(!fs.existsSync(this.logPath)){
-            fs.mkdirSync(this.logPath);
-            
+            fs.mkdirSync(this.logPath);    
         }
         [
             this.allLogsPath,
@@ -34,7 +34,7 @@ export class FileSystemDatasource implements LogDatasource{
         const logAsJson=`${JSON.stringify(newlog)}\n`
         fs.appendFileSync(this.allLogsPath,logAsJson);
         
-        if(newlog.level===LogSeverityLevel.low) return;
+        if(newlog.level===LogSeverityLevel.high) return;
 
         if(newlog.level===LogSeverityLevel.medium) {
             fs.appendFileSync(this.mediumLogsPath,logAsJson);
